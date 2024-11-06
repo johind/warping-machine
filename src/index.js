@@ -458,8 +458,8 @@ async function useProjector(el, embeddingsList, examples, options = {}) {
       const prediction = _.last(_.sortBy(examples[i].predictions, 'probability'));
       const predictedClassName = prediction.className;
       const label = (generalizationClassName === predictedClassName)
-        ? `${Math.round(100*prediction.probability)}% ${example.predictions[0].className}`
-        : `${Math.round(100*prediction.probability)}% ${example.predictions[0].className} (mislabeled)`;
+        ? `${Math.round(100*prediction.probability)}% ${predictedClassName}`
+        : `${Math.round(100*prediction.probability)}% ${predictedClassName} (mislabeled)`;
     return {label};
     // p: example.prediction.probability,
     // label: example.className
