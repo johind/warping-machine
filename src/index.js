@@ -143,7 +143,7 @@ async function inspect(generalization, model, inspectorEl, deps) {
   inspectorEl.innerHTML = '';
   const labels = model.getClassLabels();
   const classNames = Object.keys(project.filesByClassName);
-  const sameLabelsAcrossDatasets = _.isEqual(labels.sort(), classNames.sort());
+  const sameLabelsAcrossDatasets = _.isEqual(labels, classNames);
   await Promise.all(classNames.map(async className => {
     // for each class in model
     console.log('  inspect, className:', className);
